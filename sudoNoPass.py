@@ -23,3 +23,6 @@ def main():
             print("No username entered. Exiting.")
     except:
         print("Please run this program with root privilages!")
+
+if __name__=="__main__":
+    main()
