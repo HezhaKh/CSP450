@@ -7,14 +7,14 @@ description: This program disables the rootSSH and PasswdSSH
 """
 from os import geteuid as euid
 
-def createConfigFile():                                         #creat the file and return the file path
+def createConfigFile():                                         #create the file and return the file path
     filePath="/etc/ssh/sshd_config.d/10-noRootLogin"
     config="Port 22\n# Auth\nPermitRootLogin no\n# Disble Password\nPasswordAuthentication no\n# challenge-response passsword (could over-ride )\nKbdInteractiveAuthentication no\n"
     with open(filePath, "w") as file:
         file.write(config)
     return filePath
 
-def main():                                                     #check for the privilages and 
+def main():                                                     #check for the privilages and error handling
     if euid()==0:
             thePath=createConfigFile()
             print(f"The [{thePath}] was created.")
