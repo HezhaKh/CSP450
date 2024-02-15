@@ -2,7 +2,7 @@
 #fileName: ipRouter.sh
 #author: Hezha
 #dateAndTime: 1/25/24-15:48
-#description: This program take destination ip address and your router and it to the table.
+#description: This program take destination ip address and your router and write it to the route table.
 
 #check if the program has root privilage
 if [["$EUID" -ne 0]]; then
